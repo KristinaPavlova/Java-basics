@@ -7,16 +7,47 @@ public class Account
     private String customerName;
     private String customerID;
 
-    public Account()
-    {
-        customerName = "Unknown";
-        customerID = "Unknown";
-    }
 
     public Account(String customerName , String customerID)
     {
         this.customerName = customerName;
         this.customerID = customerID;
+    }
+
+    public Account(String customerName , String customerID , int balance , int previousTransaction)
+    {
+        this.customerName = customerName;
+        this.customerID = customerID;
+        this.balance = balance;
+        this.previousTransaction = previousTransaction;
+    }
+
+    String getCustomerName()throws Exception
+    {
+        if(customerName == null)
+        {
+            throw new Exception("user not identified");
+        }
+        return customerName;
+    }
+
+    String getCustomerID()throws Exception
+    {
+        if(customerID == null)
+        {
+            throw new Exception("user not identified");
+        }
+        return customerID;
+    }
+
+    int getBalance()
+    {
+        return balance;
+    }
+
+    int getPreviousTransaction()
+    {
+        return previousTransaction;
     }
 
     public void balance()
