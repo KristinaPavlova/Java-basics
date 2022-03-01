@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-import java.io.File;
+// import java.io.File;
 import java.io.IOException;
 
 public class Main
@@ -98,7 +98,7 @@ public class Main
             }
 
         } while (!correctUser);
-
+        scan.close();
 
     }
 

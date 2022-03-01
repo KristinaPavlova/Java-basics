@@ -117,10 +117,12 @@ public class UserAccount {
                     System.out.println("error in user information");
                 }
                 int balance = Integer.parseInt(line);
+                buff.close();
                 return balance;
 
             }
         }
+        buff.close();
         throw new IOException("error in file");
 
     }
@@ -147,10 +149,12 @@ public class UserAccount {
                     System.out.println("error in user information");
                 }
                 int prevTransaction = Integer.parseInt(line);
+                buff.close();
                 return prevTransaction;
 
             }
         }
+        buff.close();
         throw new IOException("error in file");
     }
 
@@ -172,7 +176,6 @@ public class UserAccount {
 
         BufferedWriter out = new BufferedWriter(new FileWriter("users.txt" , true));
         String username , userID;
-        int balance , prevTransaction;
         try
         {
             username = user.getCustomerName();
@@ -224,7 +227,7 @@ public class UserAccount {
             System.out.println("error with file");
         }
         String line;
-        String customerName = "\0" , customerID = "\0" ;
+        String customerName = "\0" ;
         try
         {
             customerName = user.getCustomerName();
@@ -233,14 +236,14 @@ public class UserAccount {
         {
             System.out.println("error");
         }
-        try
-        {
-            customerID = user.getCustomerID();
-        }
-        catch (Exception e )
-        {
-            System.out.println("error");
-        }
+        // try
+        // {
+        //     customerID = user.getCustomerID();
+        // }
+        // catch (Exception e )
+        // {
+        //     System.out.println("error");
+        // }
 
         while((line = br.readLine()) != null)
         {

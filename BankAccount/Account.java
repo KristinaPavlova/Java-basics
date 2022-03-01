@@ -171,7 +171,7 @@ public class Account
 
         }while(option != 'E');
 
-
+        scan.close();
     }
 
 }
