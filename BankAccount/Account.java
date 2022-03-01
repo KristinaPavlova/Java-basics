@@ -1,5 +1,5 @@
-package Bank;
 import java.util.Scanner;
+
 public class Account
 {
     private int balance;
@@ -7,6 +7,11 @@ public class Account
     private String customerName;
     private String customerID;
 
+    public Account()
+    {
+        this.customerName = "unknown";
+        this.customerID = "Unknown";
+    }
 
     public Account(String customerName , String customerID)
     {
@@ -19,6 +24,24 @@ public class Account
         this.customerName = customerName;
         this.customerID = customerID;
         this.balance = balance;
+        this.previousTransaction = previousTransaction;
+    }
+
+    public void setCustomerName(String customerName)
+    {
+        this.customerName = customerName;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
+    }
+
+    public void setBalance(int balance)
+    {
+        this.balance = balance;
+    }
+    public void setPreviousTransaction(int previousTransaction)
+    {
         this.previousTransaction = previousTransaction;
     }
 
@@ -40,12 +63,12 @@ public class Account
         return customerID;
     }
 
-    int getBalance()
+    public int getBalance()
     {
         return balance;
     }
 
-    int getPreviousTransaction()
+    public int getPreviousTransaction()
     {
         return previousTransaction;
     }
