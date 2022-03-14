@@ -41,6 +41,19 @@ public class CallableInterface
             }
 
         }
+
+        executor.shutdown();
+
+        try
+        {
+            if(!executor.awaitTermination(1000 , TimeUnit.MILLISECONDS))
+            {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            e.printStackTrace();
+        }
     }
 
 }
